@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nowy Post</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Dodaj nowy post</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="image">Wybierz obraz:</label><br>
+        <input type="file" name="image" required><br>
+        <label for="caption">Podpis:</label><br>
+        <textarea name="caption" rows="4" cols="50"></textarea><br>
+        <button type="submit">Opublikuj</button>
+    </form>
+</body>
+</html>

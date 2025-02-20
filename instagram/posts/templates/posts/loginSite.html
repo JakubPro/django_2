@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Logowanie</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+</head>
+
+<body>
+    <h1>Zaloguj się</h1>
+    <hr>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Log in</button>
+        <p>Nie masz jeszcze konta? <a href="{% url 'signupSite' %}">Sing up</a></p>
+
+        <hr>
+
+        <a href="{% url 'homeSite' %}">Powrót</a>
+    </form>
+</body>
+
+</html>

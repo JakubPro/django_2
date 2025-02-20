@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tworzenie konta</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+</head>
+
+<body>
+    <h1>Stwórz konto</h1>
+    <hr>
+    <form method="post">
+        {% csrf_token %}
+        <div>
+            <label for="{{ form.username.id_for_label }}">{{ form.username.label }}</label>
+            {{ form.username }}
+            {% if form.username.help_text %}
+            <small>{{ form.username.help_text }}</small>
+            {% endif %}
+            {% for error in form.username.errors %}
+            <div style="color: red;">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <div>
+            <label for="{{ form.password1.id_for_label }}">{{ form.password1.label }}</label>
+            {{ form.password1 }}
+            {% if form.password1.help_text %}
+            <small>{{ form.password1.help_text }}</small>
+            {% endif %}
+            {% for error in form.password1.errors %}
+            <div style="color: red;">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <div>
+            <label for="{{ form.password2.id_for_label }}">{{ form.password2.label }}</label>
+            {{ form.password2 }}
+            {% if form.password2.help_text %}
+            <small>{{ form.password2.help_text }}</small>
+            {% endif %}
+            {% for error in form.password2.errors %}
+            <div style="color: red;">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <button type="submit">Sign Up</button>
+        <p>Masz już konto? <a href="{% url 'loginSite' %}">Log in</a></p>
+
+        <hr>
+    
+        <a href="{% url 'homeSite' %}">Powrót</a>
+    </form>
+</body>
+
+</html>

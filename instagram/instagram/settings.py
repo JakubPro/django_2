@@ -1,3 +1,9 @@
+import os
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 """
 Django settings for instagram project.
 
@@ -20,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-d9ssgok)-ag4)cikf#$kaan2vkxo=re#twiye2+0y#t^j++x7m'
+SECRET_KEY = 'django-insecure-3$e5natf=!g@(vqkv6ysup1q+sz7b6ivv-zdc)oct0a##uh8pf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
