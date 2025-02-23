@@ -1,35 +1,32 @@
+<!DOCTYPE html>
+<html>
 <head>
-    <title>Instagram</title>
+    <title>Profil {{ profile_user.username }}</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-
+    
 </head>
-
 <body>
-    <h1>Instagram</h1>
-
-    <hr>
-
-    <a href="{% url 'loginSite' %}">Log in</a> |
-    <a href="{% url 'signupSite' %}">Sing up</a> |
-    <a href="{% url 'postSite' %}">Zapostuj</a>
-    <hr>
-
+    <header>
+        <h1>Profil {{ profile_user.username }}</h1>
+    </header>
     <div class="container">
+        <div class="profile-info">
+            <h2>{{ profile_user.username }}</h2>
+            <p>Liczba postów: {{ posts.count }}</p>
+        </div>
         <div class="feed">
             {% for post in posts %}
             <div class="post">
                 <img src="{{ post.image.url }}" alt="Obraz">
                 <div class="content">
-                    <div class="username">
-                        <a href="{% url 'profileSite' post.user.username %}">{{ post.user.username }}</a>
-                    </div>
+                    <div class="username">{{ post.user.username }}</div>
                     <div class="caption">{{ post.caption }}</div>
                     <div class="timestamp">{{ post.timestamp }}</div>
                     <div class="likes">
                         <form action="{% url 'toggle_like' post.id %}" method="post">
                             {% csrf_token %}
-                            <button type="submit">
+                            <button type="submit" class="like-btn">
                                 {% if user in post.likes.all %}
                                     Unlike
                                 {% else %}
@@ -45,5 +42,4 @@
         </div>
     </div>
 </body>
-
 </html>

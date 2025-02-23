@@ -1,148 +1,69 @@
-body{
-    font-family: Arial, sans-serif;
+body {
+    font-family: 'Arial', sans-serif;
     background-color: #f5f8fa;
     color: #191d20;
-    margin: 0.5;
+    margin: 0;
     padding: 0;
 }
 
-h1{
-    text-align: center;
-    color: #981162;
-    font-size: 2.2rem;
-}
-
-form{
-    max-width: 600px;
-    margin: 0 auto;
+header {
+    background-color: white;
     padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
+    border-bottom: 1px solid #e1e8ed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-form div{
-    margin-bottom: 15px;
-}
-
-form label{
-    display: block;
+h1 {
+    font-size: 1.8rem;
     font-weight: bold;
-}
-
-form input, form textarea, form button {
-    width: 97%;
-    padding: 10px;
-    font-size: 16px;
-    margin-top: 5px;
-    border-radius: 4px;
-    border: 1px solid #cccccc;
-}
-
-form input:focus, form textarea:focus{
-    border-color: #981162;
-    outline: none;
-}
-
-form button {
-    background-color: #981162;
-    color: white;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-}
-
-form button:hover{
-    background-color: #981162;
-}
-
-hr{
-    border: 1px solid #e1e8ed;
-    margin: 20px 0;
-}
-
-a{
     color: #981162;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-a:hover{
-    text-decoration: underline;
-}
-
-ul{
-    list-style: none;
-    padding: 0;
-    margin: 20px auto;
-    max-width: 600px;
-    background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-li{
-    padding: 15px;
-    border: 1px solid #e1e8ed;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
-    max-width: 600px;
-    box-sizing: border-box;
-}
-
-li a{
-    margin-right: 10px;
-    
-}
-
-li strong{
-    color: #000000;
-}
-
-p{
-    font-size: 18px;
-    line-height: 1.6;
-}
-
-button{
-    background-color: #981162;
-    color: #ffffff;
-    padding: 10px 20px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-button:hover{
-    background-color: #981162;
-}
-
-footer{
+    margin: 0;
     text-align: center;
-    padding: 10px;
-    background: #981162;
-    color: #ffffff;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 10px;
+}
+
+.profile-info {
+    text-align: center;
+    margin-bottom: 30px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info h2 {
+    font-size: 2.2rem;
+    color: #191d20;
+    margin-bottom: 10px;
+}
+
+.profile-info p {
+    font-size: 1rem;
+    color: #8e8e8e;
+    margin-top: 5px;
 }
 
 .feed {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 15px;
-    margin-top: 20px;
+    justify-content: center;
 }
 
 .post {
-    background-color: #fff;
-    border: 1px solid #dbdbdb;
-    border-radius: 3px;
+    background-color: white;
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    width: 250px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    width: 290px;
+    margin-bottom: 20px;
 }
 
 .post img {
@@ -152,25 +73,83 @@ footer{
 }
 
 .post .content {
-    padding: 8px 10px;
+    padding: 15px;
 }
 
 .post .username {
     font-weight: bold;
-    font-size: 14px;
-    margin-bottom: 4px;
+    font-size: 1rem;
+    color: #191d20;
+    margin-bottom: 5px;
 }
 
 .post .caption {
-    font-size: 13px;
-    line-height: 1.3;
-    margin: 4px 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-top: 5px;
+    color: #191d20;
 }
 
 .post .timestamp {
-    font-size: 10px;
+    font-size: 0.85rem;
     color: #8e8e8e;
     text-transform: uppercase;
-    margin-top: 6px;
+    margin-top: 10px;
 }
 
+.likes {
+    margin-top: 10px;
+}
+
+.like-btn {
+    background-color: #981162;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.like-btn:hover {
+    background-color: #881053;
+}
+
+.like-btn:active {
+    background-color: #780d47;
+}
+
+.like-btn:focus {
+    outline: none;
+}
+
+a {
+    color: #981162;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #981162;
+    color: white;
+    border-top: 1px solid #e1e8ed;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
