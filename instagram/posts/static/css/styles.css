@@ -1,155 +1,259 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f5f8fa;
-    color: #191d20;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-header {
-    background-color: white;
-    padding: 20px;
-    border-bottom: 1px solid #e1e8ed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-h1 {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #981162;
-    margin: 0;
-    text-align: center;
+body {
+    font-family: Arial, sans-serif;
+    background: #fafafa;
+    color: #262626;
+    line-height: 1.5;
 }
 
 .container {
-    max-width: 1000px;
-    margin: 20px auto;
-    padding: 0 10px;
-}
-
-.profile-info {
-    text-align: center;
-    margin-bottom: 30px;
-    background-color: white;
+    max-width: 935px;
+    margin: 0 auto;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
 }
 
-.profile-info h2 {
-    font-size: 2.2rem;
-    color: #191d20;
-    margin-bottom: 10px;
+.header {
+    background: #fff;
+    border-bottom: 1px solid #dbdbdb;
+    position: sticky;
+    top: 0;
+    padding: 10px 0;
+    z-index: 10;
 }
 
-.profile-info p {
-    font-size: 1rem;
-    color: #8e8e8e;
-    margin-top: 5px;
-}
-
-.feed {
+.header-content {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 935px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.nav {
+    display: flex;
     gap: 15px;
-    justify-content: center;
+}
+
+.nav-link {
+    color: #262626;
+    font-weight: 500;
+}
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
 }
 
 .post {
-    background-color: white;
+    background: #fff;
+    border: 1px solid #dbdbdb;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    width: 290px;
-    margin-bottom: 20px;
 }
 
-.post img {
+.post-image-container {
     width: 100%;
-    height: auto;
-    display: block;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fafafa;
 }
 
-.post .content {
-    padding: 15px;
+.post-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.post .username {
-    font-weight: bold;
-    font-size: 1rem;
-    color: #191d20;
-    margin-bottom: 5px;
+.post-content {
+    padding: 12px;
 }
 
-.post .caption {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin-top: 5px;
-    color: #191d20;
+.post-username {
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding: 0.5rem;
 }
 
-.post .timestamp {
-    font-size: 0.85rem;
-    color: #8e8e8e;
-    text-transform: uppercase;
-    margin-top: 10px;
+.post-caption {
+    margin-bottom: 8px;
+    word-break: break-word;
 }
 
-.likes {
-    margin-top: 10px;
+.post-actions {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
 }
 
 .like-btn {
-    background-color: #981162;
-    color: white;
-    font-weight: bold;
+    background: none;
     border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
+    font-size: 24px;
     cursor: pointer;
+    margin-right: 10px;
+}
+
+.like-count {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.comments-section {
+    margin-top: 8px;
+}
+
+.comment {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.comment-username {
+    font-weight: 600;
+}
+
+.comment-form {
+    display: flex;
+    margin-top: 10px;
+}
+
+.comment-form input {
+    flex-grow: 1;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 14px;
+}
+
+.comment-form button {
+    background: #df2544;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #df2544;
+}
+
+.profile-posts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+}
+
+.profile-post {
+    aspect-ratio: 1;
+    overflow: hidden;
+    background: #fafafa;
+    border: 1px solid #dbdbdb;
+    border-radius: 8px;
+}
+
+.profile-post img {
     width: 100%;
-    margin-bottom: 5px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.no-posts {
     text-align: center;
+    grid-column: 1 / -1;
+    padding: 20px;
 }
 
-.like-btn:hover {
-    background-color: #881053;
+.form-container {
+    max-width: 500px;
+    margin: 40px auto;
+    background: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 8px;
+    padding: 30px;
 }
 
-.like-btn:active {
-    background-color: #780d47;
-}
-
-.like-btn:focus {
-    outline: none;
-}
-
-a {
-    color: #981162;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-footer {
+.form-title {
     text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.file-input-label {
+    display: block;
+    padding: 40px 20px;
+    border: 2px dashed #dbdbdb;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.file-input-label:hover {
+    border-color: #df2544;
+}
+
+.file-input {
+    display: none;
+}
+
+.form-textarea {
+    width: 100%;
+    min-height: 100px;
     padding: 10px;
-    background-color: #981162;
-    color: white;
-    border-top: 1px solid #e1e8ed;
-    font-size: 0.9rem;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    resize: vertical;
 }
 
-footer a {
-    color: white;
+.submit-btn {
+    background: #df2544;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    width: 100%;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.error-message {
+    color: #ed4956;
+    background: #feeaea;
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    border: 1px solid #ed4956;
+}
+
+a{
+    color: #df2544;
     text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
 }

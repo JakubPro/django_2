@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>Logowanie</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-
+  <title>Logowanie</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-
 <body>
-    <h1>Zaloguj się</h1>
-    <hr>
-    <form method="post">
+  <header class="header">
+    <div class="header-content">
+      <a href="{% url 'homeSite' %}" class="logo">Instagram</a>
+      <nav class="nav">
+        <a href="{% url 'homeSite' %}" class="nav-link">Powrót</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="form-container">
+      <h2 class="form-title">Logowanie</h2>
+      
+      <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Log in</button>
-        <p>Nie masz jeszcze konta? <a href="{% url 'signupSite' %}">Sing up</a></p>
-
-        <hr>
-
-        <a href="{% url 'homeSite' %}">Powrót</a>
-    </form>
+        <br>
+        <button type="submit" class="submit-btn">Zaloguj</button>
+      </form>
+      
+      <p style="text-align: center; margin-top: 20px;">
+        Nie masz jeszcze konta? <a href="{% url 'signupSite' %}">Stwórz Konto</a>
+      </p>
+    </div>
+  </div>
 </body>
-
 </html>
